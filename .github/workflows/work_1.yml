@@ -1,8 +1,19 @@
 name: Work 1 Yahir
-on: [push]
+
+on:
+  push:
+    branches:
+      - test_1
+
 jobs:
-        build:
-         runs-on: ubuntu-latest
-         steps:
-         -  name: Print Something
-            run: echo "Hola Pitaya!"
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Run a multi-line script
+      run: |
+        echo "Impresión 1"
+        echo "Impresión 2"
+        echo "Impresión 3"
